@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div style = "size : 10.9em; color: blue;">
+		<form action = "res.jsp" method = "get">
+			이름 : <input type = "text" name = "myname" maxlength = "30"/><br/>
+			주소 : <input type = "text" name = "myaddr" maxlength = "30"/><br/>
+			<input type = "button" value = "그냥 버튼"/>
+			<input type = "submit" value ="전송"/>
+			<input type = "reset" value = "취소"/>		
+		</form>
+	</div>
+
+	<pre>
+		웹은 서버에 페이지로 요청(HTTP Request) 할 때 두가지 방식을 취한다.
+		queryString 을 포함한 GET 방식과 
+		주소줄에 요청 페이지만 있고 queryString이 없는 상태에서 
+		form의 데이터를 하나로 묶어 히든 처리되면서 요청되는 POST 방식이 있다.
+		
+		queryString이란?
+		http://localhost:8787/Java19_URI_Web/res.jsp?myname=%EA%B6%8C%EB%8B%A4%EC%86%9C&myaddr=%EA%B0%95%EB%8F%99%EA%B5%AC
+		?를 포함한 변수 =값&변수 =값,...을 말한다.
+	
+	</pre>
+
+
+
+
+
+</body>
+</html>

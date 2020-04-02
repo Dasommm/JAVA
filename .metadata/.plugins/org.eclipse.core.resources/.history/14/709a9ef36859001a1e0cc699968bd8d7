@@ -1,0 +1,101 @@
+package test;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+public class testTime {
+
+	public static void main(String[] args) {
+		
+		//현재 시간 잡아서 조회할 시간 리턴해주기
+		System.out.println(timeCal());
+		
+		//현재 날짜 format에 맞게 리턴해주기
+		
+	}
+	
+	private static String timeCal() {
+		
+	Calendar cal = Calendar.getInstance();
+	
+	// date, time, nx, ny => 20200227 1700 60 120 형식
+	
+	//yyyyMMdd형식으로 만들어 줌
+	SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHH",Locale.KOREA);
+	SimpleDateFormat timeFmt = new SimpleDateFormat("HH");		
+	//현재시간 구하기
+	String time = cal.get(Calendar.HOUR_OF_DAY)+"00";
+	String nowTime = timeFmt.format(cal.getTime());
+	String now = fmt.format(cal.getTime());
+	String nowDate = now.substring(0,8);
+	String timeCal = now.substring(8);
+	
+	System.out.println(nowDate);
+	System.out.println(nowTime);
+	System.out.println(timeCal);
+	System.out.println(time);  		//ex) 2100
+	System.out.println(now);		//ex) 20200227
+	
+	//동네예보
+	//- Base_time : 0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
+	// base_time의 4시간 후의 날씨를 알려준다
+	// 1700시가 입력된다면 2100의 상태를 알려줌
+	// 나는 현재의 상태를 알고싶다. 
+	// if 현재 17시인 경우, 14시의 값이 들어가면 18시의 예보를 보여준다.
+	// 19시인 경우에 14시의 값이 들어가서 18시의 예보를 보여준다. 이거는 에러
+	// base time의 간격은 3시간. 
+	String timeRes = null;
+	
+	switch(timeCal) {
+	case  "00": case "01": case "02":
+		timeRes= "23";
+		break;
+	case "03": case "04": case "05":
+		timeRes= "02";
+		break;
+	case "06": case "07": case "08":
+		timeRes= "05";
+		break;
+	case "09": case "10": case "11":
+		timeRes= "08";
+		break;
+	case "12": case "13": case "14":
+		timeRes= "11";
+		break;
+	case "15": case "16": case "17":
+		timeRes= "14";
+		break;
+	case "18": case "19": case "20":
+		timeRes= "17";
+		break;
+	case "21": case "22": case "23":
+		timeRes= "20";
+		break;
+		
+	}
+	System.out.println(timeRes);
+	
+	return timeRes;
+	
+	}
+	
+	private static String dateCal() {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		// date, time, nx, ny => 20200227 1700 60 120 형식
+		
+		//yyyyMMdd형식으로 만들어 줌
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHH",Locale.KOREA);
+
+		//현재시간 구하기
+		String now = fmt.format(cal.getTime());
+
+		System.out.println(now);		//ex) 20200227
+		
+		return now;
+		
+	}
+}

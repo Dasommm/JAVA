@@ -1,0 +1,29 @@
+package com.test03;
+
+public class PrnTest {
+
+	/*
+	 * System.out.print(); - 줄 바꿈 없음
+	 * System.out.println(); - 출력후, 줄 바꿈 있음
+	 * System.out.printf(); - 줄 바꿈 없음. 'f':formatter (자리or형식 지정가능)
+	 *                             //1 more
+	 * System.put.printf(String format, object,...);
+	 * 
+	 * java.util.Formatter
+	 * 
+	 * 
+	 */
+	 public static void main(String[] arg) {
+		 int i = 100;
+		 
+		 System.out.print("1.i=" + i);
+		 System.out.println("2.i="+ i);
+		 System.out.printf("3.i = %d \n", i);
+		 
+		 
+		 
+		 
+		 
+	 }
+	
+}

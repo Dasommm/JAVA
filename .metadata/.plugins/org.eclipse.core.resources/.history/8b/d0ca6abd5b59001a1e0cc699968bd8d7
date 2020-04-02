@@ -1,0 +1,27 @@
+package test;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class testTime {
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		// date, time, nx, ny => 20200227 1700 60 120 형식
+		
+		Date now = cal.getTime();
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		
+		
+		System.out.println();
+		
+		int time = cal.get(Calendar.HOUR_OF_DAY);
+		System.out.println(time+"00");  		//현재 시간 21시
+		
+		
+	}
+	
+}

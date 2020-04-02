@@ -1,0 +1,19 @@
+package test;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class testTime {
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		Date now = cal.getTime();
+		System.out.println(now);
+		
+		int time = cal.get(Calendar.HOUR_OF_DAY);
+		System.out.println(time);
+	}
+	
+}

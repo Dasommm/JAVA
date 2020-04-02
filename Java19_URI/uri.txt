@@ -1,0 +1,13 @@
+java.net : URL, Address, UDP, TCP,....
+
+1. URL : Uniform Resource Locator -  주소(위치)
+2. URN : Uniform Resource Name - 대상(이름)
+3. URI : Uniform Resource Identifier - 식별자 (어떤 파일이 어떤 위치에 있다.)
+
+URI = URL + URN
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+package test;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+public class testTime {
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		// date, time, nx, ny => 20200227 1700 60 120 형식
+		
+		//yyyyMMdd형식으로 만들어 줌
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd",Locale.KOREA);
+				
+		//현재시간 구하기
+		int time = cal.get(Calendar.HOUR_OF_DAY);
+		System.out.println(time+"00");  		//현재 시간 21시
+		
+		int fTime =0;
+		String time2 = null; //07형식
+		String nowDate = null; //yyyyMMdd 형식
+		
+		if(time ==0) { //0시에 조회한 경우
+			System.out.println("시간구하기 if");
+			cal.add(Calendar.DATE, -1); 	//하루전의 날짜로
+			cal.set(Calendar.HOUR_OF_DAY, 23); //23시로 세팅
+			
+			Date date = cal.getTime();	//변경 세팅된 시간
+			System.out.println(date);
+		
+			nowDate = fmt.format(date);
+		
+		}
+		
+	}
+	
+}
